@@ -12,11 +12,13 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri || 'mongodb://aiz:aizrayoso@ds021741.mlab.com:21741/heroku_b4wmx35t',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  appId: process.env.APP_ID || 'XZZukemfU0phjkRLdxokD12EjlTvoogGMRVSoAUv',
+  masterKey: process.env.MASTER_KEY || 'UmO9zsQkrYirH2ESyH1Xfyxezbf4JIt45Rpdy5YO', 
+  serverURL: process.env.SERVER_URL || 'http://tap-db-server.herokuapp.com/parse',
+  fileKey: 'b3c23f90-1574-4af4-a1fe-7cc7ab849a7a',
+  clientKey: 'JeK3XEGBO21Kr1WHMfRLGJ06InsnpzjBhFJUrF2Q',   
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
