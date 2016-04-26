@@ -16,7 +16,7 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'XZZukemfU0phjkRLdxokD12EjlTvoogGMRVSoAUv',
   masterKey: process.env.MASTER_KEY || 'UmO9zsQkrYirH2ESyH1Xfyxezbf4JIt45Rpdy5YO', 
-  serverURL: process.env.SERVER_URL || 'http://tap-db-server.herokuapp.com/parse',
+  serverURL: process.env.SERVER_URL || 'http://tap-db-server.herokuapp.com/parse/',
   fileKey: 'b3c23f90-1574-4af4-a1fe-7cc7ab849a7a',
   clientKey: 'JeK3XEGBO21Kr1WHMfRLGJ06InsnpzjBhFJUrF2Q',   
   liveQuery: {
