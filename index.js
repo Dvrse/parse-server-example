@@ -11,21 +11,20 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
+
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://aiz:aizrayoso@ds021741.mlab.com:21741/heroku_b4wmx35t',
+  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'XZZukemfU0phjkRLdxokD12EjlTvoogGMRVSoAUv',
-  masterKey: process.env.MASTER_KEY || 'UmO9zsQkrYirH2ESyH1Xfyxezbf4JIt45Rpdy5YO', 
-  serverURL: process.env.SERVER_URL || 'http://tap-db-server.herokuapp.com/parse/',
-  fileKey: 'b3c23f90-1574-4af4-a1fe-7cc7ab849a7a',
-  clientKey: 'JeK3XEGBO21Kr1WHMfRLGJ06InsnpzjBhFJUrF2Q',   
-  liveQuery: {
-    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  }
+  appId: process.env.APP_ID || 'UmO9zsQkrYirH2ESyH1Xfyxezbf4JIt45Rpdy5YO',
+  masterKey: process.env.MASTER_KEY || '',
+  serverURL: process.env.SERVER_URL || 'http://localhost:1337',
+  javascriptKey: process.env.JAVASCRIPT_KEY || '',  //** add this line no need to set values, they will be overwritten by heroku config vars
+  restAPIKey: process.env.REST_API_KEY || '', //** add this line
+  dotNetKey: process.env.DOT_NET_KEY || '', //** add this line
+  clientKey: process.env.CLIENT_KEY || '', //** add this line
 });
-// Client-keys like the javascript key or the .NET key are not necessary with parse-server
-// If you wish you require them, you can set them as options in the initialization above:
-// javascriptKey, restAPIKey, dotNetKey, clientKey
+
+
 
 var app = express();
 
